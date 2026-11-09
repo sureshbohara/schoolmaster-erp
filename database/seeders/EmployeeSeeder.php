@@ -1,0 +1,193 @@
+<?php
+
+namespace Database\Seeders;
+
+use App\Models\Department;
+use App\Models\Designation;
+use App\Models\Employee;
+use Illuminate\Database\Seeder;
+
+class EmployeeSeeder extends Seeder
+{
+    public function run(): void
+    {
+        $principalDesig = Designation::where('name', 'Principal')->first();
+        $teacherDesig   = Designation::where('name', 'Senior Teacher')->first();
+        $mathTeacher    = Designation::where('name', 'Math Teacher')->first();
+        $scienceTeacher = Designation::where('name', 'Science Teacher')->first();
+        $englishTeacher = Designation::where('name', 'English Teacher')->first();
+        $accountant     = Designation::where('name', 'Accountant')->first();
+        $librarian      = Designation::where('name', 'Librarian')->first();
+
+        $employees = [
+            [
+                'employee_id'    => 'EMP-001',
+                'department_id'  => $principalDesig->department_id,
+                'designation_id' => $principalDesig->id,
+                'first_name'     => 'Dr. Ram',
+                'last_name'      => 'Prasad Adhikari',
+                'gender'         => 'male',
+                'dob'            => '1975-03-15',
+                'blood_group'    => 'B+',
+                'nationality'    => 'Nepali',
+                'marital_status' => 'married',
+                'father_name'    => 'Late Hari Adhikari',
+                'mother_name'    => 'Sita Adhikari',
+                'spouse_name'    => 'Sita Adhikari',
+                'joining_date'   => '2015-01-01',
+                'basic_salary'   => 85000.00,
+                'qualification'  => 'Ph.D. in Education',
+                'experience_years' => 20,
+                'phone'          => '9841111111',
+                'emergency_contact' => '9841111112',
+                'address'        => 'Baluwatar, Kathmandu',
+                'city'           => 'Kathmandu',
+                'state'          => 'Bagmati',
+                'zip_code'       => '44600',
+                'is_teaching_staff' => true,
+                'status'         => 'active',
+            ],
+            [
+                'employee_id'    => 'EMP-002',
+                'department_id'  => $mathTeacher->department_id,
+                'designation_id' => $mathTeacher->id,
+                'first_name'     => 'Sita',
+                'last_name'      => 'Devi Maharjan',
+                'gender'         => 'female',
+                'dob'            => '1985-07-22',
+                'blood_group'    => 'A+',
+                'nationality'    => 'Nepali',
+                'marital_status' => 'married',
+                'father_name'    => 'Krishna Maharjan',
+                'mother_name'    => 'Laxmi Maharjan',
+                'spouse_name'    => 'Rajesh Maharjan',
+                'joining_date'   => '2018-04-01',
+                'basic_salary'   => 55000.00,
+                'qualification'  => 'M.Sc. Mathematics',
+                'experience_years' => 10,
+                'phone'          => '9841222222',
+                'emergency_contact' => '9841222223',
+                'address'        => 'Patan, Lalitpur',
+                'city'           => 'Lalitpur',
+                'state'          => 'Bagmati',
+                'zip_code'       => '44700',
+                'is_teaching_staff' => true,
+                'status'         => 'active',
+            ],
+            [
+                'employee_id'    => 'EMP-003',
+                'department_id'  => $scienceTeacher->department_id,
+                'designation_id' => $scienceTeacher->id,
+                'first_name'     => 'Bikash',
+                'last_name'      => 'Shrestha',
+                'gender'         => 'male',
+                'dob'            => '1988-11-10',
+                'blood_group'    => 'O+',
+                'nationality'    => 'Nepali',
+                'marital_status' => 'married',
+                'father_name'    => 'Ram Shrestha',
+                'mother_name'    => 'Sita Shrestha',
+                'spouse_name'    => 'Anju Shrestha',
+                'joining_date'   => '2019-04-01',
+                'basic_salary'   => 50000.00,
+                'qualification'  => 'M.Sc. Physics',
+                'experience_years' => 8,
+                'phone'          => '9841333333',
+                'emergency_contact' => '9841333334',
+                'address'        => 'Bhaktapur',
+                'city'           => 'Bhaktapur',
+                'state'          => 'Bagmati',
+                'zip_code'       => '44800',
+                'is_teaching_staff' => true,
+                'status'         => 'active',
+            ],
+            [
+                'employee_id'    => 'EMP-004',
+                'department_id'  => $englishTeacher->department_id,
+                'designation_id' => $englishTeacher->id,
+                'first_name'     => 'Anita',
+                'last_name'      => 'Rai',
+                'gender'         => 'female',
+                'dob'            => '1990-05-18',
+                'blood_group'    => 'B+',
+                'nationality'    => 'Nepali',
+                'marital_status' => 'single',
+                'father_name'    => 'Kumar Rai',
+                'mother_name'    => 'Maya Rai',
+                'joining_date'   => '2020-04-01',
+                'basic_salary'   => 45000.00,
+                'qualification'  => 'M.A. English',
+                'experience_years' => 6,
+                'phone'          => '9841444444',
+                'emergency_contact' => '9841444445',
+                'address'        => 'Koteshwor, Kathmandu',
+                'city'           => 'Kathmandu',
+                'state'          => 'Bagmati',
+                'zip_code'       => '44600',
+                'is_teaching_staff' => true,
+                'status'         => 'active',
+            ],
+            [
+                'employee_id'    => 'EMP-005',
+                'department_id'  => $accountant->department_id,
+                'designation_id' => $accountant->id,
+                'first_name'     => 'Suresh',
+                'last_name'      => 'Karki',
+                'gender'         => 'male',
+                'dob'            => '1982-09-05',
+                'blood_group'    => 'A-',
+                'nationality'    => 'Nepali',
+                'marital_status' => 'married',
+                'father_name'    => 'Dhan Bahadur Karki',
+                'mother_name'    => 'Kamala Karki',
+                'spouse_name'    => 'Sita Karki',
+                'joining_date'   => '2017-01-01',
+                'basic_salary'   => 45000.00,
+                'qualification'  => 'B.Com, CA Inter',
+                'experience_years' => 12,
+                'phone'          => '9841555555',
+                'emergency_contact' => '9841555556',
+                'address'        => 'Baneshwor, Kathmandu',
+                'city'           => 'Kathmandu',
+                'state'          => 'Bagmati',
+                'zip_code'       => '44600',
+                'is_teaching_staff' => false,
+                'status'         => 'active',
+            ],
+            [
+                'employee_id'    => 'EMP-006',
+                'department_id'  => $librarian->department_id,
+                'designation_id' => $librarian->id,
+                'first_name'     => 'Laxmi',
+                'last_name'      => 'Poudel',
+                'gender'         => 'female',
+                'dob'            => '1987-12-25',
+                'blood_group'    => 'AB+',
+                'nationality'    => 'Nepali',
+                'marital_status' => 'married',
+                'father_name'    => 'Hari Poudel',
+                'mother_name'    => 'Parvati Poudel',
+                'spouse_name'    => 'Ramesh Poudel',
+                'joining_date'   => '2019-01-01',
+                'basic_salary'   => 35000.00,
+                'qualification'  => 'B.Lib.Sc.',
+                'experience_years' => 7,
+                'phone'          => '9841666666',
+                'emergency_contact' => '9841666667',
+                'address'        => 'Balaju, Kathmandu',
+                'city'           => 'Kathmandu',
+                'state'          => 'Bagmati',
+                'zip_code'       => '44600',
+                'is_teaching_staff' => false,
+                'status'         => 'active',
+            ],
+        ];
+
+        foreach ($employees as $employee) {
+            Employee::updateOrCreate(
+                ['employee_id' => $employee['employee_id']],
+                $employee
+            );
+        }
+    }
+}
